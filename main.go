@@ -5,6 +5,7 @@ package main
 
 import (
 	"fmt"
+	"log"
 
 	"github.com/Sabbir185/swapzy/cmd"
 	"github.com/Sabbir185/swapzy/config"
@@ -13,10 +14,10 @@ import (
 
 func main() {
 	cnf := config.GetConfig()
-	
+
 	db, err := db.NewConnection(cnf)
 	if err != nil {
-		panic(err)
+		log.Fatalln(err)
 	}
 	defer db.Close()
 	fmt.Println("Database connection established successfully.")
