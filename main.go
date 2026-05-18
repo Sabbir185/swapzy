@@ -3,9 +3,23 @@ Copyright © 2026 SABBIR AHMMED <sabbir.py@gmail.com>
 */
 package main
 
-import "github.com/Sabbir185/swapzy/cmd"
+import (
+	"fmt"
 
+	"github.com/Sabbir185/swapzy/cmd"
+	"github.com/Sabbir185/swapzy/config"
+	"github.com/Sabbir185/swapzy/db"
+)
 
 func main() {
+	cnf := config.GetConfig()
+	
+	db, err := db.NewConnection(cnf)
+	if err != nil {
+		panic(err)
+	}
+	defer db.Close()
+	fmt.Println("Database connection established successfully.")
+
 	cmd.Execute()
 }
