@@ -15,11 +15,14 @@ import (
 func main() {
 	cnf := config.GetConfig()
 
-	db, err := db.NewConnection(cnf)
-	if err != nil {
+	if err := db.Init(cnf); err != nil {
 		log.Fatalln(err)
 	}
-	defer db.Close()
+	defer func() {
+		if err := db.Close(); err != nil {
+			log.Println("error closing database connection:", err)
+		}
+	}()
 	fmt.Println("Database connection established successfully.")
 
 	cmd.Execute()
