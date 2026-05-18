@@ -3,6 +3,9 @@ module github.com/Sabbir185/swapzy
 go 1.25.6
 
 require (
+	github.com/jmoiron/sqlx v1.4.0
+	github.com/joho/godotenv v1.5.1
+	github.com/lib/pq v1.12.3
 	github.com/spf13/cobra v1.10.2
 	gopkg.in/yaml.v2 v2.4.0
 )
