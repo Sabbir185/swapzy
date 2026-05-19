@@ -47,3 +47,10 @@ go build
 ```bash
 ./swapzy -i ./data/config.yaml -o yaml
 ```
+
+
+go run main.go save ./data/config.json
+go run main.go list
+go run main.go update -k APP_PORT -v 8080
+go run main.go delete -k APP_PORT
+go run main.go drop
