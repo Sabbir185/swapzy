@@ -10,7 +10,14 @@ Install or tidy dependencies:
 go mod tidy
 ```
 
-### Please make sure you have `PostgreSQL` installed on your system to run this CLI. And make a database named `goku` in your PostgreSQL server.
+### Please make sure you have ```PostgreSQL``` installed on your system to run this CLI. And make a database named ```goku``` in your PostgreSQL server.
+
+### Database Migration:
+Before migrate, make sure you have ```.env``` file in the root directory of the project with the following ```.env.example``` file:
+
+```bash
+make migrate-up
+```
 
 Run
 ---
