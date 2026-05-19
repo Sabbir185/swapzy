@@ -32,21 +32,22 @@ var saveCmd = &cobra.Command{
 
 		var data map[string]interface{}
 
-		if extension == "json" {
+		switch extension {
+		case "json":
 			err := json.Unmarshal(byteData, &data)
 			if err != nil {
 				cmd.PrintErrln("Error parsing JSON:", err)
 				return
 			}
 
-		} else if extension == "yaml" {
+		case "yaml":
 			err := yaml.Unmarshal(byteData, &data)
 			if err != nil {
 				cmd.PrintErrln("Error parsing YAML:", err)
 				return
 			}
 
-		} else {
+		default:
 			cmd.PrintErrln("Unsupported file format:", extension)
 			return
 		}
