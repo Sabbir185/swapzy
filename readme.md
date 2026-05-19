@@ -26,7 +26,7 @@ You can run the CLI using `go run` command:
 
 ```bash
 - Add or Dump data
-go run main.go -i save ./data/config.json
+go run main.go save -i ./data/config.json
 ```
 ```bash
 - List all data
@@ -54,7 +54,7 @@ go build
 ``` 
 ```bash
 - Add or Dump data
-./swapzy -i save ./data/config.json
+./swapzy save -i ./data/config.json
 ```
 ```bash
 - List all data
